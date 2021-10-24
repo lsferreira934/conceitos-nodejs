@@ -101,7 +101,7 @@ app.delete("/repositories/:id", (request, response) => {
 
   const found = repositoryFound(id, 'findIndex')
 
-  if (!found) {
+  if (found < 0) {
     return response
       .status(400)
       .json({ menssage: "Error, Repository not found" });
